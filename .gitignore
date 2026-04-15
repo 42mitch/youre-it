@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+out/
+
+# Environment files — NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Firebase service account key — NEVER commit this
+serviceAccountKey.json
+*firebase-adminsdk*.json
+
+# Vite
+*.local
+
+# .NET
+bin/
+obj/
+*.user
+.vs/
+local.settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
