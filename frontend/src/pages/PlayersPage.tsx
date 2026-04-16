@@ -22,9 +22,12 @@ export default function PlayersPage() {
   const handleAddPlayer = async () => {
     if (!name.trim()) return;
     setAdding(true);
-    await addPlayer(name.trim());
-    setName('');
-    setAdding(false);
+    try {
+      await addPlayer(name.trim());
+    } finally {
+      setName('');
+      setAdding(false);
+    }
   };
 
   const handleSetupNotifications = async () => {
