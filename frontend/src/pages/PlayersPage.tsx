@@ -47,7 +47,7 @@ export default function PlayersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] px-6 py-10">
+    <div className="w-full bg-[#0a0a0f] px-6 py-10">
       <h1 className="font-display text-4xl font-black text-white tracking-tight mb-8">Players</h1>
 
       {/* Add player — only when game not active */}

@@ -64,14 +64,14 @@ export function useGameState() {
       setPlayers(ps.sort((a, b) => a.createdAt - b.createdAt));
     });
 
-    const eventsQuery = query(collection(db, EVENTS_COL), orderBy('timestamp', 'desc'));
-    const unsubEvents = onSnapshot(eventsQuery, (snap) => {
-      setGameEvents(snap.docs.map((d) => ({ id: d.id, ...d.data() } as GameEvent)));
+    const unsubEvents = onSnapshot(collection(db, EVENTS_COL), (snap) => {
+      const events = snap.docs.map((d) => ({ id: d.id, ...d.data() } as GameEvent));
+      setGameEvents(events.sort((a, b) => b.timestamp - a.timestamp));
     });
 
-    const archiveQuery = query(collection(db, ARCHIVE_COL), orderBy('startTime', 'desc'));
-    const unsubArchive = onSnapshot(archiveQuery, (snap) => {
-      setArchivedGames(snap.docs.map((d) => ({ id: d.id, ...d.data() } as ArchivedGame)));
+    const unsubArchive = onSnapshot(collection(db, ARCHIVE_COL), (snap) => {
+      const games = snap.docs.map((d) => ({ id: d.id, ...d.data() } as ArchivedGame));
+      setArchivedGames(games.sort((a, b) => b.startTime - a.startTime));
     });
 
     return () => { unsubGame(); unsubPlayers(); unsubEvents(); unsubArchive(); };

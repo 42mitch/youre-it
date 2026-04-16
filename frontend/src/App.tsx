@@ -9,7 +9,7 @@ import HistoryPage from './pages/HistoryPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="max-w-md mx-auto relative min-h-screen">
+      <div className="max-w-md mx-auto relative" style={{ minHeight: '100dvh' }}>
         <div className="pb-20">
           <Routes>
             <Route path="/" element={<HomePage />} />

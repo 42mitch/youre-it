@@ -49,7 +49,7 @@ export default function TagPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] px-6 py-10">
+    <div className="w-full bg-[#0a0a0f] px-6 py-10">
       <div className="mb-8">
         <button onClick={() => navigate('/')} className="text-white/30 text-sm font-mono mb-4 flex items-center gap-2 hover:text-white/60 transition-colors">
           <ArrowLeft size={14} /> back

@@ -11,19 +11,23 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
-html, body, #root {
-  height: 100%;
-  height: -webkit-fill-available;
+html {
+  background: var(--color-bg);
 }
 
 body {
   background: var(--color-bg);
   font-family: 'Inter', sans-serif;
   overscroll-behavior: none;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  margin: 0;
+}
+
+#root {
+  background: var(--color-bg);
+  min-height: 100dvh;
 }
 
 .font-display {
@@ -35,13 +39,6 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Safe area for notched phones */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* Fix min-h-screen on iOS Safari */
-.min-h-screen {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }

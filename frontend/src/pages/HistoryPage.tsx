@@ -113,7 +113,7 @@ export default function HistoryPage() {
   const { archivedGames } = useGameState();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] px-6 py-10">
+    <div className="w-full bg-[#0a0a0f] px-6 py-10">
       <div className="mb-8">
         <h1 className="font-display text-4xl font-black text-white tracking-tight">Hall of Records</h1>
         <p className="text-white/30 mt-1 text-sm">Every game, every tag, every punishment.</p>
