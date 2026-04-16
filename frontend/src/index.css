@@ -13,10 +13,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html, body, #root {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
 body {
   background: var(--color-bg);
   font-family: 'Inter', sans-serif;
   overscroll-behavior: none;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .font-display {
@@ -31,4 +38,10 @@ body {
 /* Safe area for notched phones */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Fix min-h-screen on iOS Safari */
+.min-h-screen {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
