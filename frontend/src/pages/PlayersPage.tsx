@@ -21,13 +21,10 @@ export default function PlayersPage() {
 
   const handleAddPlayer = async () => {
     if (!name.trim()) return;
-    setAdding(true);
-    try {
-      await addPlayer(name.trim());
-    } finally {
-      setName('');
-      setAdding(false);
-    }
+    const playerName = name.trim();
+    setName('');        // clear input immediately
+    setAdding(false);   // never show spinner at all
+    addPlayer(playerName); // fire and forget — Firestore listener will update UI
   };
 
   const handleSetupNotifications = async () => {
