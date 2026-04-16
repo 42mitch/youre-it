@@ -37,7 +37,7 @@ export function useGameState() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [gameEvents, setGameEvents] = useState<GameEvent[]>([]);
   const [archivedGames, setArchivedGames] = useState<ArchivedGame[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // No blocking spinner — show UI immediately
 
   useEffect(() => {
     const unsubGame = onSnapshot(doc(db, GAME_DOC), (snap) => {
@@ -56,7 +56,7 @@ export function useGameState() {
           gameStartTime: null,
         });
       }
-      setLoading(false);
+      setLoading(false); // kept for API compatibility, state is already false
     });
 
     const unsubPlayers = onSnapshot(collection(db, PLAYERS_COL), (snap) => {
